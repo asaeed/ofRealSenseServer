@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClCompile Include="src\ofApp.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\main.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\core\ofxDatGuiComponent.cpp">
+			<Filter>addons\ofxDatGui\src\core</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\libs\ofxSmartFont\ofxSmartFont.cpp">
+			<Filter>addons\ofxDatGui\src\libs\ofxSmartFont</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\ofxDatGui.cpp">
+			<Filter>addons\ofxDatGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\jsoncpp\jsoncpp.cpp">
+			<Filter>addons\ofxLibwebsockets\libs\jsoncpp</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Client.cpp">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Connection.cpp">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Events.cpp">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Protocol.cpp">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Reactor.cpp">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Server.cpp">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\src\Util.cpp">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxRSSDKv2\src\ofxRSSDKv2.cpp">
+			<Filter>addons\ofxRSSDKv2\src</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="src">
+			<UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons">
+			<UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDatGui">
+			<UniqueIdentifier>{B36B06DF-1AA4-00D4-5A1B-6893}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDatGui\src">
+			<UniqueIdentifier>{CAA2E9BA-611F-99B2-780A-B8BA}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDatGui\src\components">
+			<UniqueIdentifier>{8EFE15E2-401E-A657-3818-AD66}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDatGui\src\core">
+			<UniqueIdentifier>{6835CAB6-404A-D3AD-148B-CD60}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDatGui\src\libs">
+			<UniqueIdentifier>{ABAEF2A2-DCDC-DB83-4614-EB2B}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDatGui\src\libs\ofxSmartFont">
+			<UniqueIdentifier>{A694AB8C-4705-277A-3AC8-2B8E}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxDatGui\src\themes">
+			<UniqueIdentifier>{2646318C-49AB-44C5-70D8-23E6}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLibwebsockets">
+			<UniqueIdentifier>{04A0ABD3-BEB0-79C1-78DC-1B0C}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLibwebsockets\src">
+			<UniqueIdentifier>{BD45AF89-23CA-D761-87B2-E28B}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLibwebsockets\libs">
+			<UniqueIdentifier>{93A2255B-E819-7999-658F-5C8B}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLibwebsockets\libs\jsoncpp">
+			<UniqueIdentifier>{EDF3DFA8-3A48-F2BE-828A-56B4}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLibwebsockets\libs\jsoncpp\json">
+			<UniqueIdentifier>{E61DA5C1-FC26-09C7-51F3-45B4}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLibwebsockets\libs\libwebsockets">
+			<UniqueIdentifier>{F5CB4033-7B46-FD26-E6BF-225D}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLibwebsockets\libs\libwebsockets\include">
+			<UniqueIdentifier>{A9821612-3A92-AF18-4416-E910}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets">
+			<UniqueIdentifier>{246E3DDA-BF78-504E-9BF2-6FA8}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets\include">
+			<UniqueIdentifier>{D876D8D2-B863-D307-0F4A-F791}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets">
+			<UniqueIdentifier>{A5834E6F-4120-53E7-CD52-711C}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLibwebsockets\libs\ofxLibwebsockets\src">
+			<UniqueIdentifier>{D616296F-164E-00EF-4F39-D224}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxRSSDKv2">
+			<UniqueIdentifier>{1E120560-DD3E-DF55-A557-25AC}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxRSSDKv2\src">
+			<UniqueIdentifier>{EE625D61-2A99-A5C4-C9BF-767C}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGui2dPad.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiButton.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiColorPicker.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiControls.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiFRM.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiGroups.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiLabel.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiMatrix.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiScrollView.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiSlider.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiTextInput.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiTextInputField.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\components\ofxDatGuiTimeGraph.h">
+			<Filter>addons\ofxDatGui\src\components</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\core\ofxDatGuiComponent.h">
+			<Filter>addons\ofxDatGui\src\core</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\core\ofxDatGuiConstants.h">
+			<Filter>addons\ofxDatGui\src\core</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\core\ofxDatGuiEvents.h">
+			<Filter>addons\ofxDatGui\src\core</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\core\ofxDatGuiIntObject.h">
+			<Filter>addons\ofxDatGui\src\core</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\libs\ofxSmartFont\ofxSmartFont.h">
+			<Filter>addons\ofxDatGui\src\libs\ofxSmartFont</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\ofxDatGui.h">
+			<Filter>addons\ofxDatGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\themes\ofxDatGuiTheme.h">
+			<Filter>addons\ofxDatGui\src\themes</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxDatGui\src\themes\ofxDatGuiThemes.h">
+			<Filter>addons\ofxDatGui\src\themes</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\src\ofxLibwebsockets.h">
+			<Filter>addons\ofxLibwebsockets\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\jsoncpp\json\json-forwards.h">
+			<Filter>addons\ofxLibwebsockets\libs\jsoncpp\json</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\jsoncpp\json\json.h">
+			<Filter>addons\ofxLibwebsockets\libs\jsoncpp\json</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\libwebsockets\include\libwebsockets.h">
+			<Filter>addons\ofxLibwebsockets\libs\libwebsockets\include</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\libwebsockets\include\lws_config.h">
+			<Filter>addons\ofxLibwebsockets\libs\libwebsockets\include</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Client.h">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Connection.h">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Events.h">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Protocol.h">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Reactor.h">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Server.h">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Util.h">
+			<Filter>addons\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\App\of_v0.9.3_vs_release\addons\ofxRSSDKv2\src\ofxRSSDKv2.h">
+			<Filter>addons\ofxRSSDKv2\src</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc" />
+	</ItemGroup>
+</Project>
