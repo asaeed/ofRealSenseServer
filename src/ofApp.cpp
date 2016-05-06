@@ -4,7 +4,8 @@
 void ofApp::setup()
 {
 	ofSetWindowShape(1280, 480);
-	/*
+	
+	isReady = false;
 	mRSSDK = RSDevice::createUniquePtr();
 
 	if (!mRSSDK->init())
@@ -14,18 +15,19 @@ void ofApp::setup()
 	}
 	else
 	{
-		mRSSDK->initDepth(DepthRes::R200_SD, 30, true);
-		mRSSDK->initRgb(RGBRes::VGA, 30);
+		mRSSDK->initDepth(DepthRes::R200_SD, 30, false);
+		mRSSDK->initRgb(RGBRes::SM, 30);
 		mTexRgb.allocate(mRSSDK->getRgbWidth(), mRSSDK->getRgbHeight(), GL_RGBA);
 		mTexDepth.allocate(mRSSDK->getDepthWidth(), mRSSDK->getDepthHeight(), GL_RGBA);
 		mRSSDK->start();
-	}*/
+		isReady = true;
+	}
 
 	//////////////////////////////////
 
-	video.listDevices();
-	//video.setDeviceID(3);
-	bVideoSetup = video.initGrabber(320, 240);
+	//video.listDevices();
+	////video.setDeviceID(3);
+	//bVideoSetup = video.initGrabber(160, 120);
 
 	//////////////////////////////////
 
@@ -39,20 +41,29 @@ void ofApp::setup()
 
 	ofBackground(0);
 	ofSetFrameRate(30);
-	//font.load("myriad.ttf", 20);
+	font.load("myriad.ttf", 20);
 }
 
 //--------------------------------------------------------------
 void ofApp::update()
 {
-	//mRSSDK->update();
-	//mTexRgb.loadData(mRSSDK->getRgbFrame(), GL_BGRA);
-	//mTexDepth.loadData(mRSSDK->getDepth8uFrame());
+	mRSSDK->update();
 
-	video.update();
-	if (bVideoSetup && video.isFrameNew()) {
-		server.sendBinary(video);
-	}
+	pixels = mRSSDK->getRgbFrame();
+
+	mTexRgb.loadData(mRSSDK->getRgbFrame(), GL_BGRA);
+	mTexDepth.loadData(mRSSDK->getDepth8uFrame());
+
+	//video.update();
+	//if (bVideoSetup && video.isFrameNew()) {
+		//server.sendBinary(video);
+	//}
+
+	int size = pixels.getWidth() * pixels.getHeight() * pixels.getNumChannels();
+	cout << "width: " << pixels.getWidth() << ", height: " << pixels.getHeight() << ", num channels: " << pixels.getNumChannels() << ", size: " << size << endl;
+
+	server.sendBinary((char *) mRSSDK->getRgbFrame().getData(), size);
+
 }
 
 //--------------------------------------------------------------
@@ -60,48 +71,48 @@ void ofApp::draw()
 {
 	ofClear(ofColor::black);
 
-	/*
+	
 	mTexRgb.draw(0, 0);
-	ofDrawBitmapString("Raw Color", ofPoint(10, 20));
+	font.drawString("Raw Color", 10, 20);
 	ofPushMatrix();
 	ofTranslate(640, 0);
 	mTexDepth.draw(0, 0, 640, 480);
-	ofDrawBitmapString("Depth Pixels", ofPoint(10, 20));
-	ofPopMatrix();*/
+	font.drawString("Depth Pixels", 10, 20);
+	ofPopMatrix();
 
 	/////////////////////////////////
 
-	if (bVideoSetup) video.draw(0, 0);
+	//if (bVideoSetup) video.draw(0, 0);
 
 	/////////////////////////////////
 
 	if (bSetup) {
-		ofDrawBitmapString("WebSocket server setup at " + ofToString(server.getPort()) + (server.usingSSL() ? " with SSL" : " without SSL"), 20, 20);
+		font.drawString("WebSocket server setup at " + ofToString(server.getPort()) + (server.usingSSL() ? " with SSL" : " without SSL"), 20, 50);
 
 		ofSetColor(150);
-		ofDrawBitmapString("Click anywhere to open up client example", 20, 40);
+		//font.drawString("Click anywhere to open up client example", 20, 40);
 	}
 	else {
-		ofDrawBitmapString("WebSocket setup failed :(", 20, 20);
+		font.drawString("WebSocket setup failed :(", 20, 20);
 	}
 
 	int x = 20;
 	int y = 100;
 
 	ofSetColor(0, 150, 0);
-	ofDrawBitmapString("Console", x, 80);
+	font.drawString("Console", x, 80);
 
 	ofSetColor(255);
 	for (int i = messages.size() - 1; i >= 0; i--) {
-		ofDrawBitmapString(messages[i], x, y);
+		font.drawString(messages[i], x, y);
 		y += 20;
 	}
 	if (messages.size() > NUM_MESSAGES) messages.erase(messages.begin());
 
 	ofSetColor(150, 0, 0);
-	ofDrawBitmapString("Type a message, hit [RETURN] to send:", x, ofGetHeight() - 60);
+	font.drawString("Type a message, hit [RETURN] to send:", x, ofGetHeight() - 60);
 	ofSetColor(255);
-	ofDrawBitmapString(toSend, x, ofGetHeight() - 40);
+	font.drawString(toSend, x, ofGetHeight() - 40);
 
 }
 
@@ -120,6 +131,8 @@ void ofApp::onConnect(ofxLibwebsockets::Event& args) {
 void ofApp::onOpen(ofxLibwebsockets::Event& args) {
 	cout << "new connection open" << endl;
 	messages.push_back("New connection from " + args.conn.getClientIP() + ", " + args.conn.getClientName());
+
+	//args.conn.send(ofToString(video.getWidth()) + ":" + ofToString(video.getHeight()) + ":" + ofToString(1));
 }
 
 //--------------------------------------------------------------
@@ -130,7 +143,7 @@ void ofApp::onClose(ofxLibwebsockets::Event& args) {
 
 //--------------------------------------------------------------
 void ofApp::onIdle(ofxLibwebsockets::Event& args) {
-	cout << "on idle" << endl;
+	//cout << "on idle" << endl;
 }
 
 //--------------------------------------------------------------

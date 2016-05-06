@@ -46,8 +46,10 @@ class ofApp : public ofBaseApp{
 		// realsense sensor
 		RSDevicePtr mRSSDK;
 		ofTexture mTexRgb, mTexDepth;
+		bool isReady;
+		ofPixels pixels;
 
 		// temp video grabber
-		bool bVideoSetup;
-		ofVideoGrabber video;
+		//bool bVideoSetup;
+		//ofVideoGrabber video;
 };
