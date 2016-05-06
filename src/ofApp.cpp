@@ -25,6 +25,51 @@ void ofApp::setup()
 
 	//////////////////////////////////
 
+	auto codec = ofxSquash::getCodecList()["density"];
+
+	string text = "\
+		I'm going to be squashed! \n\
+		I'm going to be squashed! \n\
+		I'm going to be squashed! \n\
+		I'm going to be squashed! \n\
+		I'm going to be squashed! \n\
+		I'm going to be squashed! \n\
+		";
+
+	//COMPRESS
+	string compressedText = codec.compress(text);
+
+	//DECOMPRESS (recover the original)
+	string decompressedText;
+	auto uncompressedSize = codec.getUncompressedSize(compressedText);
+	if (uncompressedSize == 0) {
+		// Not all codecs support getting the uncompressed size from the compressed data.
+
+		// In this case, we just have to hope we've allocated enough.
+		// (don't worry, the decompression will fail safely if we don't allocate enough).
+		decompressedText.resize(1000);
+
+		codec.decompress(decompressedText, compressedText);
+	}
+
+	cout << "Original (Uncompressed)" << endl;
+	cout << "=======================" << endl;
+	cout << text << endl;
+
+	cout << "Compressed" << endl;
+	cout << "========" << endl;
+	cout << compressedText << endl;
+
+	cout << "Decompressed" << endl;
+	cout << "============" << endl;
+	cout << decompressedText << endl;
+
+	cout << endl;
+	cout << text.size() << "B uncompressed -> " << compressedText.size() << "B compressed" << endl;
+	cout << endl;
+
+	//////////////////////////////////
+
 	//video.listDevices();
 	////video.setDeviceID(3);
 	//bVideoSetup = video.initGrabber(160, 120);

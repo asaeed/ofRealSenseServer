@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxRSSDKv2.h"
 #include "ofxLibwebsockets.h"
+#include "ofxSquash.h"
 
 #define NUM_MESSAGES 30
 
