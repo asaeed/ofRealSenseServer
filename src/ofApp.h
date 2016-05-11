@@ -34,6 +34,9 @@ class ofApp : public ofBaseApp{
 		bool bSetup;
 		vector<string> messages;
 		string toSend;
+		float sendFps;
+		float sendInterval;
+		float sendTime;
 		void onConnect(ofxLibwebsockets::Event& args);
 		void onOpen(ofxLibwebsockets::Event& args);
 		void onClose(ofxLibwebsockets::Event& args);
@@ -44,10 +47,11 @@ class ofApp : public ofBaseApp{
 	private:
 		ofTrueTypeFont font;
 
+		ofxSquash::Codec codec;
+
 		// realsense sensor
 		RSDevicePtr mRSSDK;
 		ofTexture mTexRgb, mTexDepth;
-		bool isReady;
 		ofPixels pixels;
 
 		// temp video grabber

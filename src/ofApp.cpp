@@ -5,7 +5,6 @@ void ofApp::setup()
 {
 	ofSetWindowShape(1280, 480);
 	
-	isReady = false;
 	mRSSDK = RSDevice::createUniquePtr();
 
 	if (!mRSSDK->init())
@@ -20,12 +19,11 @@ void ofApp::setup()
 		mTexRgb.allocate(mRSSDK->getRgbWidth(), mRSSDK->getRgbHeight(), GL_RGBA);
 		mTexDepth.allocate(mRSSDK->getDepthWidth(), mRSSDK->getDepthHeight(), GL_RGBA);
 		mRSSDK->start();
-		isReady = true;
 	}
 
 	//////////////////////////////////
 
-	auto codec = ofxSquash::getCodecList()["density"];
+	codec = ofxSquash::getCodecList()["density"];
 
 	string text = "\
 		I'm going to be squashed! \n\
@@ -80,6 +78,8 @@ void ofApp::setup()
 	options.port = 9092;
 	options.bUseSSL = false; // you'll have to manually accept this self-signed cert if 'true'!
 	bSetup = server.setup(options);
+	sendFps = 5.0f;
+	sendInterval = 1.0f / sendFps;
 
 	// this adds your app as a listener for the server
 	server.addListener(this);
@@ -104,10 +104,21 @@ void ofApp::update()
 		//server.sendBinary(video);
 	//}
 
-	int size = pixels.getWidth() * pixels.getHeight() * pixels.getNumChannels();
-	cout << "width: " << pixels.getWidth() << ", height: " << pixels.getHeight() << ", num channels: " << pixels.getNumChannels() << ", size: " << size << endl;
+	// do this for limited fps
+	if (ofGetElapsedTimef() > sendInterval) {
+		int size = pixels.getWidth() * pixels.getHeight() * pixels.getNumChannels();
+		cout << "width: " << pixels.getWidth() << ", height: " << pixels.getHeight() << ", num channels: " << pixels.getNumChannels() << ", size: " << size << endl;
 
-	server.sendBinary((char *) mRSSDK->getRgbFrame().getData(), size);
+
+		string sToCompress = string((char *)mRSSDK->getRgbFrame().getData());
+		string sToSend = codec.compress(sToCompress);
+
+		server.sendBinary(&sToSend[0u], sToSend.size());
+
+		ofResetElapsedTimeCounter();
+	}
+	
+	
 
 }
 
